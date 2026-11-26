@@ -1,0 +1,35 @@
+﻿                           
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    @await Component.InvokeAsync("AdminLayoutHead")
+
+    @await Component.InvokeAsync("AdminLayoutStyle")
+</head>
+
+<body>
+    <div class="app">
+
+        @await Component.InvokeAsync("AdminLayoutSidebar")
+
+        <div class="backdrop" id="sbBackdrop"></div>
+        <div class="main">
+
+            @await Component.InvokeAsync("AdminLayoutNavbar")
+
+
+            <main class="content" id="content">
+                @RenderBody()
+            </main>
+
+        </div>
+    </div>
+
+    @await Component.InvokeAsync("AdminLayoutScript")
+</body>
+</html>
